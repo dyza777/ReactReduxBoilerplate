@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import styles from './App.css';
+import styles from './App.scss';
 import { mainSelector } from '../../selectors';
 
 class App extends Component {
@@ -18,7 +18,7 @@ class App extends Component {
         const { title } = this.props;
 
         return (
-            <div className='main'>{ title }</div>
+            <div className={styles.main}>{ title }</div>
         );
     }
 }

@@ -12,6 +12,7 @@
   "devDependencies": {
     "babel-core": "^6.2.1",
     "babel-loader": "^7",
+    "sass-loader": "^7",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
     "chai": "^3.5.0",
@@ -22,7 +23,8 @@
     "react-addons-test-utils": "^0.14.7",
     "webpack": "^4",
     "webpack-dev-server": "^3",
-    "webpack-cli": "^2"
+    "webpack-cli": "^2",
+    "node-sass": "^4.9.0"
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
