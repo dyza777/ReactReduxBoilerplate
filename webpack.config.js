@@ -2,32 +2,29 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    entry: [
-        './src/index.js'
-    ],
+    entry: './src/index.js',
     output: {
         path: __dirname,
         publicPath: '/',
         filename: 'bundle.js'
     },
     module: {
-        loaders: [
+        rules: [
             {
                 exclude: /node_modules/,
-                loader: 'babel',
-                query: {
-                    presets: ['react', 'es2015', 'stage-1']
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['react', 'es2015', 'stage-1']
+                    }
                 }
             },
             {
                 test: /\.css$/,
                 exclude: /node_modules/,
                 loaders: ['style-loader', 'css-loader'],
-            }, {
-                test: /\.css$/,
-                include: /node_modules/,
-                loaders: ['style-loader', 'css-loader'],
-            }, {
+            },
+            {
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 use: [
                   'url-loader?limit=10000',
@@ -37,11 +34,10 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: ['.js', '.jsx', '.css']
     },
     devServer: {
         historyApiFallback: true,
-        contentBase: './',
         disableHostCheck: true
 }
 };
